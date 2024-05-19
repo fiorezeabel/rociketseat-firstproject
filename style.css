@@ -38,7 +38,8 @@ Pre-definições gerais e background
 
 body { /*Background*/
   background: var(--bg-url) no-repeat top center/cover;
-  transition: background 0.5s;
+  transition: background 0.2s;
+  height: 100vh;
 }
 
 body * { /*Pre-definições*/
@@ -47,7 +48,8 @@ body * { /*Pre-definições*/
 }
 
 #container { /*Box principal*/
-  width: 360px;
+  width: 100%;
+  max-width: 588px;
   margin: 56px auto 0px;
   padding: 0 24px;
 }
@@ -101,11 +103,17 @@ body * { /*Pre-definições*/
   z-index: 1;
 
   transform: translateY(-50%);
+
+  animation: slider-out .2s;
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slider-in 0.2s forwards;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--surface-color-hover);
+
 }
 
 #switch span {
@@ -200,3 +208,42 @@ footer a:hover {
 }
 
 
+/*
+
+Media-Queries
+
+*/
+
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(assets/bg-desktop.jpg);
+  }
+
+  .light {
+    --bg-url: url(assets/bg-desktop-light.jpg);
+  }
+}
+/*Animation*/
+@keyframes slider-in{
+
+  from {  
+    left: 0;
+  }
+
+  to {
+    left: 50%
+  }
+
+}
+
+@keyframes slider-out{
+
+  from {  
+    left: 50%;
+  }
+
+  to {
+    left: 0;
+  }
+
+}
