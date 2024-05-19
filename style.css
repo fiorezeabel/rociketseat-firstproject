@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+
+Light and Dark mode
+
+*/
+
+:root {
+  --text-color: white;
+  --bg-url: url(assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --social-color: rgba(255, 255, 255, 0.2);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.05);
+  --image_button: url(assets/MoonStars.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --social-color: rgba(0, 0, 0, 0.2);
+  --surface-color: rgba(0, 0, 0, 0.1);
+  --surface-color-hover: rgba(0, 0, 0, 0.05);
+  --image_button: url(./assets/Sun.svg);
+}
+
+/*
+
+Pre-definições gerais e background
+
+*/
+
+body { /*Background*/
+  background: var(--bg-url) no-repeat top center/cover;
+  transition: background 0.5s;
+}
+
+body * { /*Pre-definições*/
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+#container { /*Box principal*/
+  width: 360px;
+  margin: 56px auto 0px;
+  padding: 0 24px;
+}
+
+#profile { /*Avatar-box*/
+  padding: 24px;
+}
+
+#profile img { /*Avatar imagem*/
+  display: block;
+  width: 112px;
+  margin: auto;
+}
+
+#profile p { /*Avatar nome*/
+  margin-top: 8px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+/*
+
+  Botao
+
+*/
+
+#switch {
+  position: relative;
+  width: 64px;
+
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 50%;
+
+  background-color: white;
+  background-image: var(--image_button);
+  background-repeat: no-repeat;
+  background-position: center;
+
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 50%;
+
+  z-index: 1;
+
+  transform: translateY(-50%);
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+#switch span {
+  display: block;
+  text-align: center;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/*
+  LINKS
+*/
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 24px 0;
+}
+
+ul li a {
+  text-decoration: none;
+
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+
+  display: flex;
+  justify-content: center;
+
+  padding: 16px 24px;
+
+  backdrop-filter: blur(4px);
+
+  background: var(--surface-color);
+  font-weight: 500;
+
+  transition: background 0.5s; /*Animaçãozinha*/
+}
+
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1px solid var(--text-color);
+}
+
+/*
+  SOCIAL LINKS
+*/
+
+#links-social {
+  display: flex;
+  padding: 24px 0;
+  gap: 8px;
+  justify-content: center;
+  font-size: 24px;
+  transition: background 0.2s;
+}
+
+#links-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+
+  transition: background 0.5s;
+  border-radius: 50%;
+}
+
+#links-social a:hover {
+  background: var(--social-color);
+}
+
+/*
+
+  Rodape
+
+*/
+
+footer {
+  font-size: 14px;
+  padding: 24px;
+  text-align: center;
+}
+
+footer a:hover {
+  color: rgba(255, 0, 234)
+}
+
+
