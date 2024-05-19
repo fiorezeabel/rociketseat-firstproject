@@ -11,3 +11,5 @@ Este projeto foi feito utilizando as seguintes tecnologias:
 - CSS
 - JavaScript
 - Git
+
+Link do projeto: https://fiorezeabel.github.io/rociketseat-firstproject/
